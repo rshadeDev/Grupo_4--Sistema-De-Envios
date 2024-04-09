@@ -56,6 +56,7 @@ button {
     border-radius: 10px;
     margin-top: 15px;
     margin-bottom: 15px;
+    margin: 15px;
     border: none;
     color: white;
     cursor: pointer;
@@ -102,6 +103,5 @@ img {
 .botones-container{
     display: flex;
     justify-content: center;
-
 }
 
