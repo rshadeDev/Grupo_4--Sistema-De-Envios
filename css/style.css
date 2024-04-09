@@ -95,13 +95,12 @@ img {
     background-color: #2E3452;
     border-radius: 15px;
     padding: 10px 20px;
-    transition: transform 0.2s;
-    width: 500px;
+    width: 450px;
+    height: 50em;
     text-align: center;
-    margin: 25vh auto;
+    margin: 50vh auto;
 }
 .botones-container{
     display: flex;
     justify-content: center;
 }
-
