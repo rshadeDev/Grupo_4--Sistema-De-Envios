@@ -1,0 +1,162 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FF6D24;
+    color: #ffffff;
+    height: 70px;
+    width: 100%;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+h2 {
+    color: #FF6D24;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.container input {
+    width: 200px;
+    padding: 8px;
+    font-size: 0.9rem; 
+}
+
+.container span {
+    margin-right: 10px;
+}
+
+.container button {
+    margin-left: 10px;
+}
+
+button {
+    background-color: #FF6D24;
+    padding: 10px 15px;
+    border: 0;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+img {
+    height: 58px;
+    width: 15%;
+    margin-left: 10px;
+    border-radius: 15px;
+}
+
+input {
+    width: 350px;
+    padding: 10px;
+    padding-right: 35px;
+    border-radius: 5px;
+    border: 0;
+    outline: none;
+    font-size: 1rem;
+}
+
+
+.div-btn {
+    height: auto;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-right: 25px;
+}
+
+.div-btn a {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.div-btn img {
+    width: 80%;
+    height: 13rem;
+    margin-bottom: 30px;
+    border: 5px solid #FF6D24;
+    padding: 5px;
+    border-radius: 40%;
+    margin-right: 35px;
+    margin-top: 50px;
+}
+
+/* Cotización section styles */
+.section-busqueda {
+    background-color: #FFEAD4;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.section-busqueda h2,
+.section-busqueda h3 {
+    margin-top: 1rem;
+}
+
+.aside {
+    margin-top: 20px;
+}
+
+.campo {
+    margin-bottom: 10px;
+}
+
+.campos-peso-dimensiones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.campos-peso-dimensiones .campo {
+    flex: 1 1 calc(50% - 5px);
+}
+
+.opcion-tipo-entrega {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+}
+
+.valor-cotizacion {
+    margin-top: 20px;
+}
+
+.cotizar-denuevo-botones {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.cotizar-denuevo-botones button {
+    margin: 0 10px;
+}
