@@ -6,22 +6,25 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
+    flex-direction: column;
 }
 
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Añadido */
+    justify-content: space-between;
     background-color: #FF6D24;
     color: #ffffff;
     height: 70px;
     width: 100%;
     margin: 0;
-    padding: 10px 20px; /* Ajuste de padding */
+    padding: 10px 20px;
 }
 
 .container {
@@ -32,11 +35,11 @@ header {
 }
 
 .container input {
-    width: 250px; /* Ajusta según sea necesario */
+    width: 250px;
 }
 
 .container span {
-    margin-right: 10px; /* Espacio entre el input y el texto "Rastrear pedido" */
+    margin-right: 10px;
 }
 
 .container button {
@@ -47,7 +50,7 @@ input {
     width: 350px;
     padding: 10px;
     padding-right: 35px;
-    border-radius: 5px 5px 5px 5px; /* Modificado para evitar superposición */
+    border-radius: 5px;
     border: 0;
     outline: none;
     font-size: 1rem;
@@ -58,19 +61,8 @@ button {
     padding: 10px 15px;
     border: 0;
     color: #ffffff;
-    border-radius: 5px 5px 5px 5px; /* Modificado para evitar superposición */
+    border-radius: 5px;
     cursor: pointer;
-}
-
-header {
-    display: flex;
-    align-items: center;
-    background-color: #FF6D24;
-    color: #ffffff;
-    height: 70px;
-    width: 100%;
-    margin: 0;
-    padding: 10px 0;
 }
 
 img {
@@ -78,4 +70,99 @@ img {
     width: 15%;
     margin-left: 10px;
     border-radius: 15px;
+}
+
+.full-height {
+    height: 100vh;
+    width: 20rem; /* Ancho fijo del aside */
+    background-color: #FFEAD4;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.full-height img {
+    width: 70%;
+    height: auto;
+    margin-bottom: 50px;
+    border: 5px solid #FF6D24;
+    padding: 5px;
+    border-radius: 40%;
+}
+
+.row {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+section {
+    margin-left: 200px; /* Espacio a la izquierda del section */
+}
+
+.barra-busqueda-div {
+    background-color: #FFEAD4;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.barra-busqueda-div input {
+    width: 80%;
+    margin-right: 1px;
+}
+
+.barra-busqueda-div button {
+    background-color: #FF6D24;
+    padding: 12px 20px;
+    border: 0;
+    color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.lista-sucursales {
+    margin-top: 40px;
+}
+
+.lista-sucursales ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lista-sucursales ul img {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+.lista-sucursales ul h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.lista-sucursales ul h3 {
+    font-size: 1rem;
+    color: #808080;
+    margin-bottom: 5px;
+}
+
+.lista-sucursales ul span {
+    font-size: 0.9rem;
+    color: #808080;
+    margin-bottom: 5px;
+}
+
+div .sucursal-2 {
+    margin-top: 30px;
+}
+
+div .sucursal-3 {
+    margin-top: 30px;
+}
+
+div .sucursal-4 {
+    margin-top: 30px;
 }
