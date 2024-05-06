@@ -1,9 +1,9 @@
 <template>
     <section>
         <div>
-            <a href="#"><img src="../../public/img/icono-cotizacion.png" alt="Icono cotizacion" class="img-normalizada"></a>
-            <a href="#"><img src="../../public/img/icono-sucursal.png" alt="Icono sucursal" class="img-normalizada"></a>
-            <a href="#"><img src="../../public/img/icono-seguimiento.png" alt="Icono seguimiento"
+            <a id="icono-cotizacion" href="#Cotizacion"><img src="../../public/img/icono-cotizacion.png" alt="Icono cotizacion" class="img-normalizada"></a>
+            <a id="icono-sucursal" href="#sucursal"><img src="../../public/img/icono-sucursal.png" alt="Icono sucursal" class="img-normalizada"></a>
+            <a id="icono-seguimiento" href="#seguimiento"><img src="../../public/img/icono-seguimiento.png" alt="Icono seguimiento"
                     class="img-normalizada"></a>
         </div>
     </section>
@@ -44,4 +44,5 @@ img {
 .img-normalizada {
     width: 120px;
     height: 120px;
-}</style>
+}
+</style>

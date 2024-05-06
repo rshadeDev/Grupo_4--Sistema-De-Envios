@@ -6,15 +6,27 @@
             <span>Rastrear Pedido</span>
             <input type="text" placeholder="Ingresa tu N° de orden">
 
-            <button>Ingresar</button>
-            <!-- Agregar los botones si es que esta ingresada una cuenta, o si es que no hay.
-                
-            <button v-if="isAuthenticated">Cuenta</button>
+            <button v-if="!isAuthenticated" @click="login">Ingresar</button>
             <button v-else>Registrarse</button>
-            -->
         </div>
     </header>
 </template>
+
+<script>
+// Logica de lo que deberia hacer el boton a la hora de verificar si el usuario esta autenticado o no.
+export default {
+    data() {
+        return {
+            isAuthenticated: false
+        };
+    },
+    methods: {
+        login() {
+            console.log("Iniciando sesion....");
+        }
+    }
+};
+</script>
 
 <style scoped>
 header {
@@ -32,25 +44,26 @@ img {
 div {
     display: flex;
     align-items: center;
-    margin-right: 10px;
+    margin-right: 30px;
 }
 
 span {
     margin-right: 10px;
     color: white;
     font-weight: 800;
-    width: 37%;
+    width: 50%;
 }
 
 input {
     padding: 0.5rem;
     border: none;
-    width: 50%;
+    width: 60%;
+    box-sizing: content-box;
     border-radius: 7px;
 }
 
 button {
-    width: 80px;
+    width: 85px;
     margin-left: 10px;
     padding: 0.5rem;
     border: none;
