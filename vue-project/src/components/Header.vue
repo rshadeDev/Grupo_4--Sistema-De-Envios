@@ -1,19 +1,21 @@
 <template>
     <header>
-        <img src="../../public/img/Logo.png" alt="logo">
+        <RouterLink to="/">
+            <img src="../assets/img/Logo.png" alt="logo">
+        </RouterLink>
 
         <div>
             <span>Rastrear Pedido</span>
             <input type="text" placeholder="Ingresa tu N° de orden">
 
-            <button v-if="!isAuthenticated" @click="login">Ingresar</button>
-            <button v-else>Registrarse</button>
+            <button v-if="!isAuthenticated" @click="navigateToLogin">Registrarse</button>
         </div>
     </header>
 </template>
 
 <script>
-// Logica de lo que deberia hacer el boton a la hora de verificar si el usuario esta autenticado o no.
+import { RouterLink } from 'vue-router';
+
 export default {
     data() {
         return {
@@ -21,10 +23,11 @@ export default {
         };
     },
     methods: {
-        login() {
-            console.log("Iniciando sesion....");
+        navigateToLogin() {
+            this.$router.push('/login'); // Navigate to the '/login' route
         }
-    }
+    },
+    components: { RouterLink }
 };
 </script>
 
@@ -38,7 +41,7 @@ header {
 }
 
 img {
-    width: 11%;
+    width: 20%;
 }
 
 div {
@@ -71,4 +74,5 @@ button {
     background-color: #FFEAD4;
     color: orangered;
     cursor: pointer;
-}</style>
+}
+</style>
