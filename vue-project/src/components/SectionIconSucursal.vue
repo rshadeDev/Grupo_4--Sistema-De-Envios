@@ -55,7 +55,7 @@ img:hover {
     transform: scale(1.03);
 }
 
-.img-normalizada {
+.img-normal {
     width: 120px;
     height: 120px;
 }

@@ -1,0 +1,170 @@
+[
+    {
+        "empresa": "Chilexpress",
+        "nombre": "Sucursal Santiago Centro",
+        "direccion": "Calle Santiago 123",
+        "ciudad": "Santiago",
+        "telefono": "+56 2 1234 5678"
+    },
+    {
+        "empresa": "Chilexpress",
+        "nombre": "Sucursal Ñuñoa",
+        "direccion": "Calle Ñuñoa 789",
+        "ciudad": "Ñuñoa",
+        "telefono": "+56 2 3456 7890"
+    },
+    {
+        "empresa": "Chilexpress",
+        "nombre": "Sucursal Temuco",
+        "direccion": "Avenida Temuco 789",
+        "ciudad": "Temuco",
+        "telefono": "+56 45 3456 7890"
+    },
+    {
+        "empresa": "Starken",
+        "nombre": "Sucursal Valparaíso",
+        "direccion": "Calle Valparaíso 456",
+        "ciudad": "Valparaíso",
+        "telefono": "+56 32 9876 5432"
+    },
+    {
+        "empresa": "Starken",
+        "nombre": "Sucursal Viña del Mar",
+        "direccion": "Avenida Viña del Mar 123",
+        "ciudad": "Viña del Mar",
+        "telefono": "+56 32 1234 5678"
+    },
+    {
+        "empresa": "Starken",
+        "nombre": "Sucursal Iquique",
+        "direccion": "Avenida Iquique 456",
+        "ciudad": "Iquique",
+        "telefono": "+56 57 9876 5432"
+    },
+    {
+        "empresa": "Correos de Chile",
+        "nombre": "Sucursal Concepción",
+        "direccion": "Calle Concepción 789",
+        "ciudad": "Concepción",
+        "telefono": "+56 41 3456 7890"
+    },
+    {
+        "empresa": "Correos de Chile",
+        "nombre": "Sucursal Talca",
+        "direccion": "Avenida Talca 123",
+        "ciudad": "Talca",
+        "telefono": "+56 71 1234 5678"
+    },
+    {
+        "empresa": "Correos de Chile",
+        "nombre": "Sucursal Puerto Montt",
+        "direccion": "Calle Puerto Montt 456",
+        "ciudad": "Puerto Montt",
+        "telefono": "+56 65 9876 5432"
+    },
+    {
+        "empresa": "Chilexpress",
+        "nombre": "Sucursal Temuco Centro",
+        "direccion": "Calle Temuco Centro 321",
+        "ciudad": "Temuco",
+        "telefono": "+56 45 2109 8765"
+    },
+    {
+        "empresa": "Chilexpress",
+        "nombre": "Sucursal Temuco Sur",
+        "direccion": "Avenida Sur 456",
+        "ciudad": "Temuco",
+        "telefono": "+56 45 3456 2109"
+    },
+    {
+        "empresa": "Starken",
+        "nombre": "Sucursal Temuco Norte",
+        "direccion": "Calle Norte 789",
+        "ciudad": "Temuco",
+        "telefono": "+56 45 6789 1234"
+    },
+    {
+        "empresa": "Starken",
+        "nombre": "Sucursal Temuco Oeste",
+        "direccion": "Avenida Oeste 987",
+        "ciudad": "Temuco",
+        "telefono": "+56 45 5432 1098"
+    },
+    {
+        "empresa": "Chilexpress",
+        "nombre": "Sucursal Temuco Este",
+        "direccion": "Calle Este 654",
+        "ciudad": "Temuco",
+        "telefono": "+56 45 8901 2345"
+    },
+    {
+        "empresa": "Starken",
+        "nombre": "Sucursal Temuco Sur-Oriente",
+        "direccion": "Avenida Sur-Oriente 321",
+        "ciudad": "Temuco",
+        "telefono": "+56 45 4321 0987"
+    },
+    {
+        "empresa": "Chilexpress",
+        "nombre": "Sucursal Temuco Nor-Oriente",
+        "direccion": "Avenida Nor-Oriente 876",
+        "ciudad": "Temuco",
+        "telefono": "+56 45 5678 9012"
+    },
+    {
+        "empresa": "Starken",
+        "nombre": "Sucursal Temuco Nor-Poniente",
+        "direccion": "Avenida Nor-Poniente 543",
+        "ciudad": "Temuco",
+        "telefono": "+56 45 6789 0123"
+    },
+    {
+        "empresa": "Chilexpress",
+        "nombre": "Sucursal Temuco Sur-Poniente",
+        "direccion": "Calle Sur-Poniente 210",
+        "ciudad": "Temuco",
+        "telefono": "+56 45 7890 1234"
+    },
+    {
+        "empresa": "Starken",
+        "nombre": "Sucursal Temuco Centro-Oriente",
+        "direccion": "Avenida Centro-Oriente 789",
+        "ciudad": "Temuco",
+        "telefono": "+56 45 8901 2345"
+    },
+    {
+        "empresa": "Chilexpress",
+        "nombre": "Sucursal Temuco Centro-Poniente",
+        "direccion": "Calle Centro-Poniente 456",
+        "ciudad": "Temuco",
+        "telefono": "+56 45 9012 3456"
+    },
+    {
+        "empresa": "Starken",
+        "nombre": "Sucursal Temuco Norte-Oriente",
+        "direccion": "Avenida Norte-Oriente 123",
+        "ciudad": "Temuco",
+        "telefono": "+56 45 0123 4567"
+    },
+    {
+        "empresa": "Chilexpress",
+        "nombre": "Sucursal Temuco Norte-Poniente",
+        "direccion": "Calle Norte-Poniente 678",
+        "ciudad": "Temuco",
+        "telefono": "+56 45 2345 6789"
+    },
+    {
+        "empresa": "Starken",
+        "nombre": "Sucursal Temuco Sur-Centro",
+        "direccion": "Avenida Sur-Centro 987",
+        "ciudad": "Temuco",
+        "telefono": "+56 45 3456 7890"
+    },
+    {
+        "empresa": "Chilexpress",
+        "nombre": "Sucursal Temuco Este-Centro",
+        "direccion": "Calle Este-Centro 654",
+        "ciudad": "Temuco",
+        "telefono": "+56 45 5678 9012"
+    }
+]

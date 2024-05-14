@@ -55,16 +55,14 @@ const buscarSucursales = () => {
         filteredSucursales.value = sucursalesJSON;
     }
 };
-/*
-// Función para iniciar la búsqueda inicial y actualizarla cuando cambie la ciudad en los parámetros de la URL
+
 const iniciarBusqueda = () => {
     buscarSucursales();
 };
 
-watch(searchInput, buscarSucursales);
+watch(searchInput);
 
 onMounted(iniciarBusqueda);
-*/
 </script>
 
 <style scoped>

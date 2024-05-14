@@ -1,7 +1,7 @@
 <template>
-    <Sucursal />
+    <RouterView />
 </template>
 
 <script setup>
-import Sucursal from './components/Vistas/Sucursal.vue';
+import { RouterView } from 'vue-router';
 </script>
