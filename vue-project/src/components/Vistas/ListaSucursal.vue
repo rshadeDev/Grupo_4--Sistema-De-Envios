@@ -19,7 +19,7 @@
                             <p>{{ sucursal.empresa }}</p>
                         </li>
                     </ul>
-                    <p v-else>No se encontraron sucursales</p>
+                    <p v-else>No se han encontraron sucursales</p>
                 </div>
             </div>
         </div>
