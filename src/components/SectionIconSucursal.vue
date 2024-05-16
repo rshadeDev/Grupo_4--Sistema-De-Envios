@@ -24,7 +24,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 6em;
+    margin-top: 9em;
 }
 
 a {

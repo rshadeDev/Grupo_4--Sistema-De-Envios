@@ -8,7 +8,7 @@
             <span>Rastrear Pedido</span>
             <input type="text" placeholder="Ingresa tu N° de orden">
 
-            <button v-if="!isAuthenticated" @click="navigateToLogin">Registrarse</button>
+            <button @click="handleButtonClick">{{ isAuthenticated ? 'cuenta' : 'registrarse' }}</button>
         </div>
     </header>
 </template>
@@ -22,9 +22,17 @@ export default {
             isAuthenticated: false
         };
     },
+    mounted() {
+        this.isAuthenticated = localStorage.getItem('isLoggedIn') === 'true';
+    },
     methods: {
-        navigateToLogin() {
-            this.$router.push('/login'); // Navigate to the '/login' route
+        handleButtonClick() {
+            if (this.isAuthenticated) {
+                localStorage.setItem('isLoggedIn', 'false');
+                this.isAuthenticated = false;
+            } else {
+                this.$router.push('/login');
+            }
         }
     },
     components: { RouterLink }
@@ -36,12 +44,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.7rem 2rem;
+    padding: 1.1rem 2rem;
     background-color: rgb(238, 100, 50);
 }
 
 img {
-    width: 20%;
+    width: 22%;
 }
 
 div {
