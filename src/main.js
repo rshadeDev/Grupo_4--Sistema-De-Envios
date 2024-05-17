@@ -13,7 +13,7 @@ import MapaSeguimiento from './components/Vistas/MapaSeguimiento.vue'
 
 // definir rutas
 const routes = [
-    { path: '/', component: Sucursal },
+    { path: '/sucursal', component: Sucursal },
     { path: '/lista-sucursal', component: ListaSucursal },
     { path: '/seguimiento', component: Seguimiento},
     { path: '/info-seguimiento', component: InfoSeguimiento},
