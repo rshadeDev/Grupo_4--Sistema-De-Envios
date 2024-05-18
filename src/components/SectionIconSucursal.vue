@@ -16,9 +16,6 @@
     </section>
 </template>
 
-<script setup>
-</script>
-
 <style scoped>
 section {
     display: flex;

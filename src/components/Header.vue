@@ -98,5 +98,6 @@ button {
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    color: black;
 }
 </style>
