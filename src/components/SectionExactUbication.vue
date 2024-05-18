@@ -57,6 +57,7 @@ button{
     color: white;
     border-style: none;
     border-radius: 10px;
+    cursor: pointer;
 }
 .content{
     height: fit-content;
