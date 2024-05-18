@@ -166,5 +166,12 @@
         "direccion": "Calle Este-Centro 654",
         "ciudad": "Temuco",
         "telefono": "+56 45 5678 9012"
+    },
+    {
+        "empresa": "Chilexpress",
+        "nombre": "Sucursal Antofagasta",
+        "direccion": "Calle Este-Centro 654",
+        "ciudad": "Antofagasta",
+        "telefono": "+56 45 5678 9012"
     }
 ]

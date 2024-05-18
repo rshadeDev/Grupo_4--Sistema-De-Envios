@@ -1,7 +1,7 @@
 <template>
     <section>
         <div>
-            <RouterLink to="/cotizacion">
+            <RouterLink to="/">
                 <img src="../assets/img/icono-cotizacion.png" id="cotizacion" alt="Icono cotización" class="img-normal">
             </RouterLink>
 
@@ -24,10 +24,6 @@ section {
     margin-top: 9em;
 }
 
-a {
-    text-decoration: none;
-}
-
 div {
     display: flex;
     align-items: center;
@@ -40,6 +36,7 @@ img {
     justify-content: center;
     margin-right: 6em;
     margin-left: 6.5em;
+    padding: 10px;
 
     border: 5px solid #FF6D24;
     border-radius: 40%;
