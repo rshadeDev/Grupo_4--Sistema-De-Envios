@@ -77,5 +77,6 @@ button{
     border-style: none;
     color: white;
     margin: 0% 5% 5% 5%;
+    cursor: pointer;
 }
 </style>
