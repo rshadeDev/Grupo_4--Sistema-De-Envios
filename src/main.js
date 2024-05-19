@@ -16,7 +16,7 @@ const routes = [
     { path: '/sucursal', component: Sucursal },
     { path: '/lista-sucursal', component: ListaSucursal },
     { path: '/seguimiento', component: Seguimiento},
-    { path: '/info-seguimiento', component: InfoSeguimiento},
+    { path: '/info-seguimiento/:pedidoRecibido',name:"info-pedido", component: InfoSeguimiento, props: true},
     { path: '/info-seguimiento/mapa-seguimiento', component: MapaSeguimiento}
 ]
 

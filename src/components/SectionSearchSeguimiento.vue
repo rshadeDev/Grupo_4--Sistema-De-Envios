@@ -4,31 +4,39 @@
         <h3>Ingrese el codigo de envio entregado al finalizar la cotizacion</h3>
 
         <div class="search-bar">
-            <input type="text" placeholder="Ingrese el codigo que le fue entregado para ver los detalles del pedido" v-model="city">
-            <button @click="buscarPedido">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="14" viewBox="0 0 24 20" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M5 12l14 0" />
-                    <path d="M15 16l4 -4" />
-                    <path d="M15 8l4 4" />
-                </svg>
-            </button>
+            <form v-on:submit.prevent="buscarPedido">
+                <input type="text" placeholder="Ingrese el codigo que le fue entregado para ver los detalles del pedido" v-model="id">
+                <button type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="14" viewBox="0 0 24 20" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M5 12l14 0" />
+                        <path d="M15 16l4 -4" />
+                        <path d="M15 8l4 4" />
+                    </svg>
+                </button>
+            </form>
         </div>
     </section>
 </template>
 
 <script>
+import jsonData from '../components/PedidosJson.json';
+
 export default {
     data() {
         return {
-            city: ''
+            id: null,
+            pedidoBuscado: {},
         };
     },
     methods: {
         buscarPedido() {
-            this.$router.push({ path: '/info-seguimiento'});
+            this.pedidoBuscado = JSON.stringify(jsonData.find(pedidos => pedidos.id == this.id));
+            if(this.pedidoBuscado != null){
+                this.$router.push({name:"info-pedido", params:{pedidoRecibido: this.pedidoBuscado}});
+            }
         }
     }
 };
