@@ -38,14 +38,92 @@
         </p>
       </form>
     </div>
-  </section>
-    
+  </section>    
 </template>
   
-<script>  
-</script>
+<script>
+  export default {
+    data() {
+      return {
+        rut: '',
+        nombre: '',
+        apellido: '',
+        email: '',
+        direccion: '',
+        comuna: '',
+        telefonoMovil: '',
+        contraseña: ''
+      };
+    },
+  };
+  </script>
   
 <style scoped>
+.register-section {
+  background-color: #FFEAD4;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 650px;
+}
+
+.register-container {
+  background-color: #2E3452;
+  border-radius: 15px;
+  padding: 10px 20px;
+  width: 500px;
+  text-align: center;
+  margin: 5vh auto;
+}
+
+.botones-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.botones-container a {
+  text-decoration: none;
+  color: white;
+}
+
+input {
+  display: block;
+  width: calc(100% - 22px);
+  margin: 5px 0;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  background-color: #FF6D24;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  width: 100%;
+}
+
+label {
+  display: block;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+p {
+  color: white;
+}
+
 img {
   width: 80%;
 }
