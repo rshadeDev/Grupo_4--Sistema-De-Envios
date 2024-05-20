@@ -30,6 +30,18 @@ export default {
       contraseña: ''
     };
   },
+  methods: {
+    submitForm() {
+      this.login();
+    },
+    login() {
+      this.$root.isAuthenticated = true;
+
+      localStorage.setItem('isLoggedIn', 'true');
+
+      this.$router.go(-1);
+    }
+  }
 };
 </script>
   
