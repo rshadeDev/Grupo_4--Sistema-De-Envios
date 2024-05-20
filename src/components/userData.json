@@ -1,0 +1,10 @@
+{
+    "rut": "12345678-9",
+    "nombre": "Juan",
+    "apellido": "Perez",
+    "email": "juan.perez@ufromail.cl",
+    "Direccion": "Calle juanperez 122",
+    "comuna": "Santiago",
+    "telefonoMovil": "+56912345678",
+    "contraseña": "contraseña123"
+}
