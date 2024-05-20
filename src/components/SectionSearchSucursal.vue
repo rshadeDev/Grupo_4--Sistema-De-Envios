@@ -148,7 +148,8 @@ button {
     cursor: pointer;
     transition: background-color 0.3s;
     border-bottom: 1px solid #ccc;
-    list-style-type: none;
+    list-style: none;
+    margin-left: -40px;
 }
 
 .dropdown li:hover {
