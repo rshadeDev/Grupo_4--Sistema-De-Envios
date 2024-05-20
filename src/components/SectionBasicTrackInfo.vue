@@ -1,22 +1,23 @@
 <template>
     <section>
         <div class="contentId">
-            <h4>Nro. pedido: 12839283849392944</h4>
+            <h4>Nro. pedido: {{ pedidoD.id}}</h4>
         </div>
         <div class="content">
-            <div class="info"><p>Entrega en: Ultima direccion conocida</p></div>
-            <div class="info"><p>Destinatario: Juan Cesar gutierrez sesamo</p></div>
-            <div class="info"><p>Origen: Direccion de origen</p></div>
-            <div class="info"><p>Destino: Direccion de destino</p></div>
+            <div class="info"><p>Entrega en: {{ pedidoD["ultima-sucursal"] }}</p></div>
+            <div class="info"><p>Destinatario: {{ pedidoD.destinatario }}</p></div>
+            <div class="info"><p>Origen: {{ pedidoD.origen }}</p></div>
+            <div class="info"><p>Destino: {{ pedidoD.destino }}</p></div>
             <div class="button"><button @click="verMapa">Ver en el mapa</button></div>
         </div>
     </section>
 </template>
 <script>
 export default {
+    props:["pedido"],
     data() {
         return {
-            city: ''
+            pedidoD: JSON.parse(this.pedido)
         };
     },
     methods: {
@@ -25,6 +26,7 @@ export default {
         }
     }
 };
+
 </script>
 <style scoped>
 section{
