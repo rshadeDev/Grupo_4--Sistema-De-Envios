@@ -22,12 +22,92 @@
   </section>
 </template>
 
-
+<script>
+export default {
+  data() {
+    return {
+      rut: '',
+      contraseña: ''
+    };
+  },
+};
+</script>
   
 <style scoped>
+.inicio-sesion-section {
+  background-color: #FFEAD4;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 650px;
+}
+.login-container {
+  background-color: #2E3452;
+  border-radius: 15px;
+  padding: 10px 20px;
+  width: 500px;
+  text-align: center;
+  margin: 20vh auto;
+}
+
 img {
   height: auto;
   width: 60%;
   border-radius: 20px;
 }
+
+h2 {
+  color: #ffffff;
+}
+
+label {
+  display: block;
+  text-align: left;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+input {
+  display: block;
+  width: calc(100% - 22px);
+  margin-bottom: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  background-color: #FF6D24;
+  width: calc(100% - 22px);
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  width: 100%;
+}
+
+.register-link {
+  margin-top: 20px;
+  color: #ffffff;
+}
+
+.register-link .link {
+  color: #FF6D24;
+  text-decoration: none;
+}  
+
+p {
+  color: white;
+}
+
 </style>
