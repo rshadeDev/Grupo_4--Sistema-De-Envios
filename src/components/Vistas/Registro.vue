@@ -55,6 +55,22 @@
         contraseña: ''
       };
     },
+    methods: {
+      submitForm() {
+        const userData = {
+          rut: this.rut,
+          nombre: this.nombre,
+          apellido: this.apellido,
+          email: this.email,
+          direccion: this.direccion,
+          comuna: this.comuna,
+          telefonoMovil: this.telefonoMovil,
+          contraseña: this.contraseña
+        };
+        localStorage-setItem('userData', JSON.stringify(userData));
+        this.$router.push('/InicioSesion');
+      },
+    }
   };
   </script>
   
