@@ -5,7 +5,8 @@
 
         <div class="search-bar">
             <form v-on:submit.prevent="buscarPedido">
-                <input type="text" placeholder="Ingrese el codigo que le fue entregado para ver los detalles del pedido" v-model="id">
+                <input type="text" placeholder="Ingrese el codigo que le fue entregado para ver los detalles del pedido"
+                    v-model="id">
                 <button type="submit">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="14" viewBox="0 0 24 20" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -34,8 +35,8 @@ export default {
     methods: {
         buscarPedido() {
             this.pedidoBuscado = JSON.stringify(jsonData.find(pedidos => pedidos.id == this.id));
-            if(this.pedidoBuscado != null){
-                this.$router.push({name:"info-pedido", params:{pedidoRecibido: this.pedidoBuscado}});
+            if (this.pedidoBuscado != null) {
+                this.$router.push({ name: "info-pedido", params: { pedidoRecibido: this.pedidoBuscado } });
             }
         }
     }

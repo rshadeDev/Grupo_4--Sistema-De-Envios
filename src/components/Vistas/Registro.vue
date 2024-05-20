@@ -67,7 +67,7 @@
           telefonoMovil: this.telefonoMovil,
           contraseña: this.contraseña
         };
-        localStorage-setItem('userData', JSON.stringify(userData));
+        localStorage.setItem('userData', JSON.stringify(userData));
         this.$router.push('/InicioSesion');
       },
     }

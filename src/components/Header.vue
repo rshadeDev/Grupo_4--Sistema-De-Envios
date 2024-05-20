@@ -6,8 +6,8 @@
 
         <div class="search-container">
             <span>Rastrear Pedido</span>
-            <input type="text" placeholder="Ingresa tu N° de orden" class="search-input">
-            <button class="search-button">
+            <input type="search" placeholder="Ingresa tu N° de orden" class="search-input" v-model="id">
+            <button class="search-button" @click="buscarPedido">
                 <svg class="w-[16px] h-[16px] text-gray-800 dark:text-white" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
@@ -22,11 +22,12 @@
 
 <script>
 import { RouterLink } from 'vue-router';
+import jsonData from '../components/PedidosJson.json';
 
 export default {
     data() {
         return {
-            isAuthenticated: false
+            isAuthenticated: false,
         };
     },
     mounted() {
@@ -35,10 +36,14 @@ export default {
     methods: {
         handleButtonClick() {
             if (this.isAuthenticated) {
-                localStorage.setItem('isLoggedIn', 'false');
-                this.isAuthenticated = false;
             } else {
-                this.$router.push('/login');
+                this.$router.push('/registro');
+            }
+        },
+        buscarPedido() {
+            this.pedidoBuscado = JSON.stringify(jsonData.find(pedidos => pedidos.id == this.id));
+            if (this.pedidoBuscado != null) {
+                this.$router.push({ name: "info-pedido", params: { pedidoRecibido: this.pedidoBuscado } });
             }
         }
     },
