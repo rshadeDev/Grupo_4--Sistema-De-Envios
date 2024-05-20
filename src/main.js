@@ -22,7 +22,7 @@ const routes = [
     { path: '/inicio-sesion', component: InicioSesion },
     { path: '/seguimiento', component: Seguimiento},
     { path: '/info-seguimiento/:pedidoRecibido',name:"info-pedido", component: InfoSeguimiento, props: true},
-    { path: '/info-seguimiento/mapa-seguimiento', component: MapaSeguimiento}
+    { path: '/info-seguimiento/mapa-seguimiento/:pedidoRecibido',name:"mapa-pedido", component: MapaSeguimiento, props:true}
 ]
 
 // Crear el router
