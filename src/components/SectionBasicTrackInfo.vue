@@ -22,7 +22,7 @@ export default {
     },
     methods: {
         verMapa() {
-            this.$router.push({ path: '/info-seguimiento/mapa-seguimiento'});
+            this.$router.push({name:"mapa-pedido",params:{pedidoRecibido:this.pedido}});
         }
     }
 };
