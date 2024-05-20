@@ -7,9 +7,9 @@
             <div class="info">
                 <div class="nombre">Datos Del Pedido</div>
                 <div class="detalle">
-                    <li>Nro. pedido: 12839283849392944</li>
-                    <li>Origen: Direccion de origen</li>
-                    <li>Destino: Direccion de destino</li>
+                    <li>Nro. pedido: {{ pedidoD.id }}</li>
+                    <li>Origen: {{ pedidoD.origen }}</li>
+                    <li>Destino: {{ pedidoD.destino }}</li>
                 </div>
             </div>
             <div class="info">
@@ -26,14 +26,15 @@
 </template>
 <script>
 export default {
+    props:["pedido"],
     data() {
         return {
-            city: ''
+            pedidoD: JSON.parse(this.pedido)
         };
     },
     methods: {
         volverAInfo() {
-            this.$router.push({ path: '/info-seguimiento'});
+            this.$router.push({name:"info-pedido", params:{pedidoRecibido: this.pedido}});
         }
     }
 };
