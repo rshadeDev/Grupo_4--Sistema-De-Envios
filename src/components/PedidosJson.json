@@ -1,0 +1,26 @@
+[
+    {
+        "id" : 0,
+        "destinatario" : "Juan Cesar Gutierrez Sesamo",
+        "origen" : "Direccion de origen",
+        "destino" : "Direccion de destino",
+        "fecha-salida" : "2012-04-23T18:25:43.511Z",
+        "ultima-sucursal" : "Nombre sucursal"
+    },
+    {
+        "id" : 1,
+        "destinatario" : "Jose Nicolas Martinez Burgos",
+        "origen" : "Direccion de origen",
+        "destino" : "Direccion de destino",
+        "fecha-salida" : "2024-02-29T22:30:00.000Z",
+        "ultima-sucursal" : "Nombre sucursal"
+    },
+    {
+        "id" : 2,
+        "destinatario" : "Cesar Samuel",
+        "origen" : "Direccion de origen",
+        "destino" : "Direccion de destino",
+        "fecha-salida" : "2023-10-15T13:15:55.511Z",
+        "ultima-sucursal" : "Nombre sucursal"
+    }
+]

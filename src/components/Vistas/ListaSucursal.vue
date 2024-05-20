@@ -7,7 +7,6 @@
             <div class="right-content">
                 <div class="input">
                     <input type="search" placeholder="Ingresa el nombre de la ciudad" v-model="searchInput">
-                    <button @click="buscarSucursales">Buscar</button>
                 </div>
 
                 <div class="lista-sucursales">
@@ -60,7 +59,7 @@ const iniciarBusqueda = () => {
     buscarSucursales();
 };
 
-watch(searchInput);
+watch(searchInput, iniciarBusqueda);
 
 onMounted(iniciarBusqueda);
 </script>
@@ -92,7 +91,7 @@ onMounted(iniciarBusqueda);
 }
 
 input {
-    width: 85%;
+    width: 97%;
     padding: 10px;
     border-radius: 5px;
     border: none;

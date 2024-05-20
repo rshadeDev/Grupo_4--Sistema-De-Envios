@@ -1,11 +1,11 @@
 <template>
     <aside>
         <div>
-            <RouterLink to="/cotizacion">
+            <RouterLink to="/">
                 <img src="../assets/img/icono-cotizacion.png" id="cotizacion" alt="Icono cotización" class="img-normal">
             </RouterLink>
 
-            <RouterLink to="/" id="sucursal">
+            <RouterLink to="/sucursal" id="sucursal">
                 <img src="../assets/img/icono-sucursal.png" alt="Icono sucursal" class="img-normal">
             </RouterLink>
 
@@ -37,6 +37,7 @@ img {
     margin-right: 6em;
     margin-left: 6.5em;
     background-color: white;
+    padding: 10px;
 
     border: 5px solid #FF6D24;
     border-radius: 40%;
