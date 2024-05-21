@@ -4,20 +4,20 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import App from './App.vue'
 
 // Componentes a cargar
-import Sucursal from './components/Vistas/Sucursal.vue'
-import ListaSucursal from './components/Vistas/ListaSucursal.vue'
+import Sucursal from './Vistas/Sucursal.vue'
+import ListaSucursal from './Vistas/ListaSucursal.vue'
 
-import Registro from './components/Vistas/Registro.vue'
-import InicioSesion from './components/Vistas/InicioSesion.vue'
+import Registro from './Vistas/Registro.vue'
+import InicioSesion from './Vistas/InicioSesion.vue'
 
-import Cotizacion from './components/Vistas/Cotizacion.vue'
-import Cotizacion2Tipo from './components/Vistas/Cotizacion2Tipo.vue'
-import Cotizacion3Document from './components/Vistas/Cotizacion3Document.vue'
-import Cotizacion4Paquete from './components/Vistas/Cotizacion4Paquete.vue'
+import Cotizacion from './Vistas/Cotizacion.vue'
+import Cotizacion2Tipo from './Vistas/Cotizacion2Tipo.vue'
+import Cotizacion3Document from './Vistas/Cotizacion3Document.vue'
+import Cotizacion4Paquete from './Vistas/Cotizacion4Paquete.vue'
 
-import Seguimiento from './components/Vistas/Seguimiento.vue'
-import InfoSeguimiento from './components/Vistas/InfoSeguimiento.vue'
-import MapaSeguimiento from './components/Vistas/MapaSeguimiento.vue'
+import Seguimiento from './Vistas/Seguimiento.vue'
+import InfoSeguimiento from './Vistas/InfoSeguimiento.vue'
+import MapaSeguimiento from './Vistas/MapaSeguimiento.vue'
 
 // definir rutas
 const routes = [
@@ -25,7 +25,7 @@ const routes = [
     { path: '/lista-sucursal', component: ListaSucursal },
     { path: '/registro', component: Registro },
     { path: '/inicio-sesion', component: InicioSesion },
-    { path: '/cotizacion', component: Cotizacion },
+    { path: '/', component: Cotizacion },
     { path: '/cotizacion2-tipo', component: Cotizacion2Tipo },
     { path: '/cotizacion3-document', component: Cotizacion3Document },
     { path: '/cotizacion4-paquete', component: Cotizacion4Paquete },

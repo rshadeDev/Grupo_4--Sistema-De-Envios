@@ -3,8 +3,8 @@
     <SectionExactUbication :pedido="pedidoRecibido"/>
 </template>
 <script setup>
-import Header from '../Header.vue';
-import SectionExactUbication from '../SectionExactUbication.vue';
+import Header from '../components/Header.vue';
+import SectionExactUbication from '../components/SectionExactUbication.vue';
 
 const props = defineProps({
   pedidoRecibido: {

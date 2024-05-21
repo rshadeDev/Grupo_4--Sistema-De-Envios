@@ -9,9 +9,9 @@
 </template>
 
 <script setup>
-import Header from '../Header.vue';
-import SectionBasicTrackInfo from '../SectionBasicTrackInfo.vue';
-import SectionMoreTrackInfo from '../SectionMoreTrackInfo.vue';
+import Header from '../components/Header.vue';
+import SectionBasicTrackInfo from '../components/SectionBasicTrackInfo.vue';
+import SectionMoreTrackInfo from '../components/SectionMoreTrackInfo.vue';
 
 const props = defineProps({
   pedidoRecibido: {

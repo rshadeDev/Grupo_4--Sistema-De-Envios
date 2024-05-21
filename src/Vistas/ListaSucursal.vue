@@ -26,10 +26,10 @@
 </template>
   
 <script setup>
-import Header from '../Header.vue';
-import AsideIcon from '../AsideIconSucursal.vue';
+import Header from '../components/Header.vue';
+import AsideIcon from '../components/AsideIconSucursal.vue';
 
-import sucursalesJSON from '../SucursaleJSON.json';
+import sucursalesJSON from '../components/Json/lista-sucursales.json';
 
 import { ref, onMounted, watch } from 'vue';
 import { useRouter } from 'vue-router';

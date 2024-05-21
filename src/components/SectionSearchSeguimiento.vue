@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import jsonData from '../components/PedidosJson.json';
+import jsonData from '../components/Json/PedidosJson.json';
 
 export default {
     data() {

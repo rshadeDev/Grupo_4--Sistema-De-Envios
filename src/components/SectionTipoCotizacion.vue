@@ -1,22 +1,32 @@
 <template>
-    <section class="section-busqueda">
-      <h2>COTIZA CON NOSOTROS</h2>
-      <h3>Cotiza tu envío y obtén tu valor estimado.</h3>
-      <div class="cotizar-envio">
-        <RouterLink to="/Cotizacion" id="retroceder">
-        <button class="boton-naranjo"><</button>
-        </RouterLink>
-        <RouterLink to="/Cotizacion3">
-            <img src="../assets/img/mail.png" id="e-mail" alt="Icono e-mail" class="img-normal">
-        </RouterLink>
-        <RouterLink to="/Cotizacion4">
-            <img src="../assets/img/icono-cotizacion.png" id="paquete" alt="Icono paquete" class="img-normal">
-        </RouterLink>
-        <RouterLink to="/Cotizacion3" id="siguiente">
-        <button class="boton-naranjo">></button>
+  <section class="section-busqueda">
+    <h2>COTIZA CON NOSOTROS</h2>
+    <h3>Cotiza tu envío y obtén tu valor estimado.</h3>
+    <div class="cotizar-envio">
+      <RouterLink to="/" id="retroceder">
+        <button class="boton-naranjo"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m15 19-7-7 7-7" />
+          </svg>
+        </button>
       </RouterLink>
-      </div>
-    </section>
+      <RouterLink to="/Cotizacion3-document">
+        <img src="../assets/img/mail.png" id="e-mail" alt="Icono e-mail" class="img-normal">
+      </RouterLink>
+      <RouterLink to="/Cotizacion4-paquete">
+        <img src="../assets/img/icono-cotizacion.png" id="paquete" alt="Icono paquete" class="img-normal">
+      </RouterLink>
+      <RouterLink to="/Cotizacion3-document" id="siguiente">
+        <button class="boton-naranjo"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m9 5 7 7-7 7" />
+          </svg>
+        </button>
+      </RouterLink>
+    </div>
+  </section>
 </template>
 
 <script>

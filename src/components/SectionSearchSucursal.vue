@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import jsonData from '../components/SucursaleJSON.json';
+import jsonData from '../components/Json/lista-sucursales.json';
 
 export default {
     data() {
