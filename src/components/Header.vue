@@ -5,15 +5,17 @@
         </RouterLink>
 
         <div class="search-container">
-            <span>Rastrear Pedido</span>
-            <input type="search" placeholder="Ingresa tu N° de orden" class="search-input" v-model="id">
-            <button class="search-button" @click="buscarPedido">
-                <svg class="w-[16px] h-[16px] text-gray-800 dark:text-white" aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
-                        d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
-                </svg>
-            </button>
+            <div class="input-container">
+                <span>Rastrear Pedido</span>
+                <input type="search" placeholder="Ingresa tu N° de orden" class="search-input" v-model="id">
+                <button class="search-button" @click="buscarPedido">
+                    <svg class="w-[16px] h-[16px] text-gray-800 dark:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                            d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+                    </svg>
+                </button>
+            </div>
 
             <button @click="handleButtonClick">{{ isAuthenticated ? 'cuenta' : 'registrarse' }}</button>
             <button v-if="isAuthenticated" @click="logoutButton">Logout</button>
@@ -79,10 +81,16 @@ img {
     margin-right: 30px;
 }
 
+.input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
 span {
     color: white;
     font-weight: 800;
-    width: 20%;
+    width: 30%;
 }
 
 button {
@@ -99,14 +107,14 @@ button {
 .search-input {
     padding: 0.5rem 2.5rem 0.5rem 0.5rem;
     border: none;
-    width: 400px;
+    width: 350px;
     box-sizing: border-box;
     border-radius: 7px;
 }
 
 .search-button {
     position: absolute;
-    right: 160px;
+    right: -20px;
     background-color: transparent;
     border: none;
     cursor: pointer;
