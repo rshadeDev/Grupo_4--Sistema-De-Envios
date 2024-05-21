@@ -2,7 +2,7 @@
   <section class="register-section">
     <div class="register-container">
       <RouterLink to="/">
-        <img src="../../assets/img/Logo.png" alt="logo">
+        <img src="../assets/img/Logo.png" alt="logo">
       </RouterLink>
   
       <form @submit.prevent="submitForm">

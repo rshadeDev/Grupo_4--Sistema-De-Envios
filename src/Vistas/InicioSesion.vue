@@ -2,7 +2,7 @@
   <section class="inicio-sesion-section">
     <div class="login-container">
       <RouterLink to="/">
-        <img src="../../assets/img/Logo.png" alt="logo">
+        <img src="../assets/img/Logo.png" alt="logo">
       </RouterLink>
     <h2>Ingresa tus datos</h2>
     <form @submit.prevent="submitForm">

@@ -60,9 +60,13 @@ export default {
 <style scoped>
 .section-busqueda {
   background-color: #FFEAD4;
-  padding: 20px;
-  text-align: center;
-  margin-top: 30px
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6em;
+  width: 100%;
+  height: 25em;
 }
 
 .section-busqueda h2 {
@@ -82,13 +86,19 @@ export default {
   padding: 10px;
 }
 
-.div-ciudad {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: 70px;
-  margin-right: 30px;
-  width: 50%;
+.div-ciudad-origen {
+  margin-left: 20rem;
+  width: 100%;
+}
+
+.div-ciudad-destino {
+  width: 100%;
+}
+
+label {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  margin-right: 10px;
 }
 
 select {

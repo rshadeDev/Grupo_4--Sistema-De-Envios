@@ -16,6 +16,7 @@
             </button>
 
             <button @click="handleButtonClick">{{ isAuthenticated ? 'cuenta' : 'registrarse' }}</button>
+            <button v-if="isAuthenticated" @click="logoutButton">Logout</button>
         </div>
     </header>
 </template>
@@ -28,6 +29,7 @@ export default {
     data() {
         return {
             isAuthenticated: false,
+            id: '',
         };
     },
     mounted() {
@@ -45,6 +47,12 @@ export default {
             if (this.pedidoBuscado != null) {
                 this.$router.push({ name: "info-pedido", params: { pedidoRecibido: this.pedidoBuscado } });
             }
+        },
+        logoutButton() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.setItem('isLoggedIn', false);
+            this.isAuthenticated = false;
+            location.reload();
         }
     },
     components: { RouterLink }
@@ -98,7 +106,7 @@ button {
 
 .search-button {
     position: absolute;
-    right: 70px;
+    right: 160px;
     background-color: transparent;
     border: none;
     cursor: pointer;
