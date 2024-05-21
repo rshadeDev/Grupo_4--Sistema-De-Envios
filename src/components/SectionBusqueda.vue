@@ -68,7 +68,6 @@ export default {
   margin-top: 6em;
   width: 100%;
   height: 25em;
-  box-sizing: border-box;
 }
 
 .section-busqueda h2 {
@@ -83,9 +82,8 @@ export default {
 
 .contenedor-divs {
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
 }
 
 .div-ciudad-origen,
@@ -93,6 +91,7 @@ export default {
   margin: 1rem;
   width: 100%;
   max-width: 400px;
+  margin-left: 40px;
 }
 
 label {
@@ -127,7 +126,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 70px;
+  margin-top: 32px;
   margin-left: 30px;
 }
 </style>
