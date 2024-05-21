@@ -2,24 +2,48 @@
     {
         "id" : 0,
         "destinatario" : "Juan Cesar Gutierrez Sesamo",
-        "origen" : "Direccion de origen",
-        "destino" : "Direccion de destino",
-        "fecha-salida" : "2012-04-23T18:25:43.511Z",
+        "origen":{
+            "nombre": "direccion de origen",
+            "latitud" : -38.728299603944826,
+            "longitud" : -72.57683776038272
+        },
+        "destino":{
+            "nombre": "direccion de origen",
+            "latitud" : -36.82518762703624,
+            "longitud" : -72.9941049181855
+        },
+        "fecha-salida" : "2024-05-21T04:30:00.000Z",
         "ultima-sucursal" : "Nombre sucursal"
     },
     {
         "id" : 1,
         "destinatario" : "Jose Nicolas Martinez Burgos",
-        "origen" : "Direccion de origen",
-        "destino" : "Direccion de destino",
+        "origen":{
+            "nombre": "direccion de origen",
+            "latitud" : -38.728299603944826,
+            "longitud" : -72.57683776038272
+        },
+        "destino":{
+            "nombre": "direccion de origen",
+            "latitud" : -36.82518762703624,
+            "longitud" : -72.9941049181855
+        },
         "fecha-salida" : "2024-02-29T22:30:00.000Z",
         "ultima-sucursal" : "Nombre sucursal"
     },
     {
         "id" : 2,
         "destinatario" : "Cesar Samuel",
-        "origen" : "Direccion de origen",
-        "destino" : "Direccion de destino",
+        "origen":{
+            "nombre": "direccion de origen",
+            "latitud" : -38.728299603944826,
+            "longitud" : -72.57683776038272
+        },
+        "destino":{
+            "nombre": "direccion de origen",
+            "latitud" : -36.82518762703624,
+            "longitud" : -72.9941049181855
+        },
         "fecha-salida" : "2023-10-15T13:15:55.511Z",
         "ultima-sucursal" : "Nombre sucursal"
     }
