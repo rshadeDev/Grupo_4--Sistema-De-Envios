@@ -1,22 +1,84 @@
 {
     "ciudades": [
-        "Santiago",
-        "Concepción",
-        "Valparaíso",
-        "Viña del Mar",
-        "Antofagasta",
-        "Temuco",
-        "Rancagua",
-        "Talca",
-        "Arica",
-        "Iquique",
-        "Curicó",
-        "Los Ángeles",
-        "Osorno",
-        "Puerto Montt",
-        "La Serena",
-        "Coquimbo",
-        "Chillán",
-        "Calama"
+        {
+            "nombre": "Santiago",
+            "region": "Región Metropolitana"
+        },
+        {
+            "nombre": "Valparaíso",
+            "region": "Región de Valparaíso"
+        },
+        {
+            "nombre": "Concepción",
+            "region": "Región del Biobío"
+        },
+        {
+            "nombre": "La Serena",
+            "region": "Región de Coquimbo"
+        },
+        {
+            "nombre": "Antofagasta",
+            "region": "Región de Antofagasta"
+        },
+        {
+            "nombre": "Temuco",
+            "region": "Región de La Araucanía"
+        },
+        {
+            "nombre": "Rancagua",
+            "region": "Región del Libertador General Bernardo O'Higgins"
+        },
+        {
+            "nombre": "Puerto Montt",
+            "region": "Región de Los Lagos"
+        },
+        {
+            "nombre": "Arica",
+            "region": "Región de Arica y Parinacota"
+        },
+        {
+            "nombre": "Iquique",
+            "region": "Región de Tarapacá"
+        },
+        {
+            "nombre": "Talca",
+            "region": "Región del Maule"
+        },
+        {
+            "nombre": "Chillán",
+            "region": "Región de Ñuble"
+        },
+        {
+            "nombre": "Punta Arenas",
+            "region": "Región de Magallanes y de la Antártica Chilena"
+        },
+        {
+            "nombre": "Copiapó",
+            "region": "Región de Atacama"
+        },
+        {
+            "nombre": "Coyhaique",
+            "region": "Región de Aysén del General Carlos Ibáñez del Campo"
+        },
+        {
+            "nombre": "Valdivia",
+            "region": "Región de Los Ríos"
+        },
+        {
+            "nombre": "Quilpué",
+            "region": "Región de Valparaíso"
+        },
+        {
+            "nombre": "Los Ángeles",
+            "region": "Región del Biobío"
+        },
+        {
+            "nombre": "Osorno",
+            "region": "Región de Los Lagos"
+        },
+        {
+            "nombre": "Calama",
+            "region": "Región de Antofagasta"
+        }
     ]
 }
