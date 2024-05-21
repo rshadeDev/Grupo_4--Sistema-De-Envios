@@ -102,7 +102,9 @@ export default {
   background-color: #FFEAD4;
   padding: 20px;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 6em;
+  width: 100%;
+  height: 25em;
 }
 
 .section-busqueda h2 {
@@ -118,6 +120,8 @@ export default {
 }
 
 .aside {
+  margin-top: 60px;
+  margin-left: 8rem;
   width: 30%;
 }
 
@@ -143,7 +147,7 @@ export default {
 }
 
 .valor-cotizacion {
-  font-weight: bold;
+  font-weight: 500;
   margin-top: 2rem;
 }
 
@@ -171,6 +175,10 @@ export default {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+span {
+  font-weight: 900;
 }
 </style>
   
