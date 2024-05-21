@@ -6,8 +6,8 @@
         <div class="content">
             <div class="info"><p>Entrega en: {{ pedidoD["ultima-sucursal"] }}</p></div>
             <div class="info"><p>Destinatario: {{ pedidoD.destinatario }}</p></div>
-            <div class="info"><p>Origen: {{ pedidoD.origen }}</p></div>
-            <div class="info"><p>Destino: {{ pedidoD.destino }}</p></div>
+            <div class="info"><p>Origen: {{ pedidoD.origen.nombre }}</p></div>
+            <div class="info"><p>Destino: {{ pedidoD.destino.nombre }}</p></div>
             <div class="button"><button @click="verMapa">Ver en el mapa</button></div>
         </div>
     </section>
