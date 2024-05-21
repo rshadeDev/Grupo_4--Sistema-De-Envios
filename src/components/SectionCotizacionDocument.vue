@@ -23,7 +23,23 @@
 </template>
   
 <script>
-
+  export default {
+    methods: {
+      calcularCotizacion() {
+        let valorFinal = 500;
+  
+        if (this.tipoEntrega === 'Domicilio') {
+          valorFinal += 10000;
+        }
+  
+        this.valorCotizacion = valorFinal;
+      },
+      nuevaCotizacion() {
+        this.tipoEntrega = '';
+        this.valorCotizacion = 0;
+      }
+    }
+  }
 </script>
   
 <style scoped>

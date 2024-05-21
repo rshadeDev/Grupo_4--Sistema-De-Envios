@@ -42,7 +42,54 @@
   </template>
   
 <script>
-
+  export default {
+    data() {
+      return {
+        peso: 0,
+        largo: 0,
+        ancho: 0,
+        altura: 0,
+        tipoEntrega: '',
+        valorCotizacion: 0,
+        errorMensaje: ''
+      };
+    },
+    methods: {
+      calcularCotizacion() {
+        this.errorMensaje = '';
+        if (this.peso > 50 || this.peso < 2.5) {
+          this.errorMensaje = 'El peso debe estar entre 2.5 y 50 kg';
+          return;
+        } else if (this.largo > 2 || this.ancho > 2 || this.altura > 2) {
+          this.errorMensaje = 'Las dimensiones no pueden ser mayores a 2 metros';
+          return;
+        }
+  
+        const volumen = this.largo * this.ancho * this.altura;
+        const pesoVolumetrico = volumen * 200;
+        const pesoCobrar = Math.max(this.peso, pesoVolumetrico);
+        const tarifaBase = 500;
+        const tarifaPorKg = 100;
+  
+        let valorFinal = tarifaBase + (tarifaPorKg * pesoCobrar);
+  
+        if (this.tipoEntrega === 'Domicilio') {
+          valorFinal += 10000;
+        }
+  
+        this.valorCotizacion = valorFinal;
+      },
+      nuevaCotizacion() {
+        this.peso = 0;
+        this.largo = 0;
+        this.ancho = 0;
+        this.altura = 0;
+        this.tipoEntrega = '';
+        this.valorCotizacion = 0;
+        this.errorMensaje = '';
+      }
+    }
+  }
 </script>
   
 <style scoped>

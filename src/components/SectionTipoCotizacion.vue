@@ -20,7 +20,13 @@
 </template>
 
 <script>
-
+export default {
+  name: 'SectionCotizacion',
+  props: {
+    ciudadOrigen: String,
+    ciudadDestino: String
+  }
+}
 </script>
   
 <style scoped>

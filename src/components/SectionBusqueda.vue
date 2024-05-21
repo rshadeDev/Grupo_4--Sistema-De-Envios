@@ -25,7 +25,31 @@
 </template>
   
 <script>
-
+import ciudadesData from '../components/ciudades.json';  
+  export default {
+    data() {
+      return {
+        ciudadOrigen: '',
+        ciudadDestino: '',
+        ciudades: [],
+      };
+    },
+    created() {
+      this.cargarCiudades();
+    },
+    methods: {
+      cargarCiudades() {
+        this.ciudades = ciudadesData;
+      },
+      buscarSucursal(tipo) {
+        if (tipo === 'origen' && this.ciudadOrigen) {
+          console.log(`Buscando sucursal en la ciudad de origen: ${this.ciudadOrigen}`);
+        } else if (tipo === 'destino' && this.ciudadDestino) {
+          console.log(`Buscando sucursal en la ciudad de destino: ${this.ciudadDestino}`);
+        }
+      },
+    },
+};
 </script>
   
 <style scoped>
