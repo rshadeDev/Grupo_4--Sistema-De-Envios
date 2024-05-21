@@ -3,7 +3,7 @@
     <h2>COTIZA CON NOSOTROS</h2>
     <h3>Cotiza tu envío y obtén tu valor estimado.</h3>
     <div class="container">
-      <RouterLink to="/Cotizacion" id="retroceder">
+      <RouterLink to="/" id="retroceder">
         <button class="boton-naranjo"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -103,7 +103,7 @@ export default {
   padding: 20px;
   text-align: center;
   margin-top: 6em;
-  width: 100%;
+  width: 97.5%;
   height: 25em;
 }
 
