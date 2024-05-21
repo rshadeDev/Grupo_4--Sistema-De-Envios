@@ -28,16 +28,14 @@ div {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 50%;
 }
 
 img {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 6em;
-    margin-left: 6.5em;
     padding: 10px;
-
     border: 5px solid #FF6D24;
     border-radius: 40%;
     transition: all 0.5s ease;
