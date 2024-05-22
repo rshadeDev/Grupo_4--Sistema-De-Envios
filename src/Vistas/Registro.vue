@@ -31,7 +31,9 @@
         <input type="password" id="contraseña" name="contraseña" required>
 
         <div class="button-Registrarse">
-          <button type="submit">Registrarse</button>
+          <RouterLink to="/inicio-sesion">
+            <button type="submit">Registrarse</button>
+          </RouterLink>
         </div>
         <p class="login-link">Ya tienes una cuenta?
           <router-link to="/inicio-sesion" class="link">Iniciar sesion</router-link>
@@ -42,35 +44,38 @@
 </template>
   
 <script>
+import { RouterLink } from 'vue-router';
+
 export default {
-  data() {
-    return {
-      rut: '',
-      nombre: '',
-      apellido: '',
-      email: '',
-      direccion: '',
-      comuna: '',
-      telefonoMovil: '',
-      contraseña: ''
-    };
-  },
-  methods: {
-    submitForm() {
-      const userData = {
-        rut: this.rut,
-        nombre: this.nombre,
-        apellido: this.apellido,
-        email: this.email,
-        direccion: this.direccion,
-        comuna: this.comuna,
-        telefonoMovil: this.telefonoMovil,
-        contraseña: this.contraseña
-      };
-      localStorage.setItem('userData', JSON.stringify(userData));
-      this.$router.push('/InicioSesion');
+    data() {
+        return {
+            rut: '',
+            nombre: '',
+            apellido: '',
+            email: '',
+            direccion: '',
+            comuna: '',
+            telefonoMovil: '',
+            contraseña: ''
+        };
     },
-  }
+    methods: {
+        submitForm() {
+            const userData = {
+                rut: this.rut,
+                nombre: this.nombre,
+                apellido: this.apellido,
+                email: this.email,
+                direccion: this.direccion,
+                comuna: this.comuna,
+                telefonoMovil: this.telefonoMovil,
+                contraseña: this.contraseña
+            };
+            localStorage.setItem('userData', JSON.stringify(userData));
+            this.$router.push('/InicioSesion');
+        },
+    },
+    components: { RouterLink }
 };
 </script>
   

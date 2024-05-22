@@ -40,7 +40,7 @@ export default {
 
       localStorage.setItem('isLoggedIn', 'true');
 
-      this.$router.push('/sucursal');
+      this.$router.push('/');
     }
   }
 };
