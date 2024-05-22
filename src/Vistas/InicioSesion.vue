@@ -125,4 +125,10 @@ button[type="submit"] {
 p {
   color: white;
 }
+
+p a {
+  color: #FF6D24;
+  text-decoration: none;
+  font-weight: 700;
+}
 </style>

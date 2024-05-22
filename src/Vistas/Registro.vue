@@ -4,32 +4,32 @@
       <RouterLink to="/">
         <img src="../assets/img/Logo.png" alt="logo">
       </RouterLink>
-  
+
       <form @submit.prevent="submitForm">
         <label for="rut">Ingrese su RUT:</label>
         <input type="text" id="rut" name="rut" required>
-  
+
         <label for="nombre">Ingrese su nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
-  
+
         <label for="apellido">Ingrese su apellido:</label>
         <input type="text" id="apellido" name="apellido" required>
-  
+
         <label for="e-mail">Ingrese su e-mail:</label>
         <input type="text" id="e-mail" name="e-mail" required>
-  
+
         <label for="direccion">Ingrese su dirección:</label>
         <input type="text" id="direccion" name="direccion" required>
-  
+
         <label for="comuna">Ingrese su comuna:</label>
         <input type="text" id="comuna" name="comuna" required>
-  
+
         <label for="telefono-movil">Ingrese su número móvil:</label>
         <input type="text" id="telefono-movil" name="telefono-movil" required>
-  
+
         <label for="contraseña">Ingrese su contraseña:</label>
         <input type="password" id="contraseña" name="contraseña" required>
-  
+
         <div class="button-Registrarse">
           <button type="submit">Registrarse</button>
         </div>
@@ -38,41 +38,41 @@
         </p>
       </form>
     </div>
-  </section>    
+  </section>
 </template>
   
 <script>
-  export default {
-    data() {
-      return {
-        rut: '',
-        nombre: '',
-        apellido: '',
-        email: '',
-        direccion: '',
-        comuna: '',
-        telefonoMovil: '',
-        contraseña: ''
+export default {
+  data() {
+    return {
+      rut: '',
+      nombre: '',
+      apellido: '',
+      email: '',
+      direccion: '',
+      comuna: '',
+      telefonoMovil: '',
+      contraseña: ''
+    };
+  },
+  methods: {
+    submitForm() {
+      const userData = {
+        rut: this.rut,
+        nombre: this.nombre,
+        apellido: this.apellido,
+        email: this.email,
+        direccion: this.direccion,
+        comuna: this.comuna,
+        telefonoMovil: this.telefonoMovil,
+        contraseña: this.contraseña
       };
+      localStorage.setItem('userData', JSON.stringify(userData));
+      this.$router.push('/InicioSesion');
     },
-    methods: {
-      submitForm() {
-        const userData = {
-          rut: this.rut,
-          nombre: this.nombre,
-          apellido: this.apellido,
-          email: this.email,
-          direccion: this.direccion,
-          comuna: this.comuna,
-          telefonoMovil: this.telefonoMovil,
-          contraseña: this.contraseña
-        };
-        localStorage.setItem('userData', JSON.stringify(userData));
-        this.$router.push('/InicioSesion');
-      },
-    }
-  };
-  </script>
+  }
+};
+</script>
   
 <style scoped>
 .register-section {
@@ -81,6 +81,8 @@
   flex-direction: column;
   margin: 0 auto;
   width: 650px;
+  height: 100vh;
+  max-height: 100vh;
 }
 
 .register-container {
@@ -140,8 +142,13 @@ p {
   color: white;
 }
 
+p a {
+  color: #FF6D24;
+  text-decoration: none;
+  font-weight: 700;
+}
+
 img {
   width: 80%;
 }
-
 </style>
