@@ -2,35 +2,89 @@
     <section>
         <div class="content">
             <div class="firstItem">
-                <div class="dot"><img src="../assets/img/icono-sucursal.png" alt=""></div>
+                <div class="dot" :class="{active: estado >= 1}"><img src="../assets/img/icono-sucursal.png" alt=""></div>
                 <div class="line"></div>
             </div>
             <div class="info-25-75">
-                <div class="content-info"><span>Aqui hay info</span></div>
+                <div class="content-info"><span>{{ infoSucursal }}</span></div>
                 <div class="content-fill"></div>
             </div>
             <div class="secondItem">
                 <div class="line"></div>
-                <div class="dot"><img src="../assets/img/Pin-mapa.png" alt=""></div>
+                <div class="dot" :class="{active: estado >= 2}"><img src="../assets/img/icono-seguimiento.png" alt=""></div>
                 <div class="line"></div>
             </div>
             <div class="info-center">
                 <div class="content-fill"></div>
-                <div class="content-info"><span>Aqui hay info</span></div>
+                <div class="content-info"><span>{{ infoSeguimiento }}</span></div>
                 <div class="content-fill"></div>
             </div>
             <div class="thirdItem">
                 <div class="line"></div>
-                <div class="dot"><img src="../assets/img/icono-seguimiento.png" alt=""></div>
+                <div class="dot"  :class="{active: estado == 3}"><img src="../assets/img/Pin-mapa.png" alt=""></div>
             </div>
             <div class="info-25-75">
                 <div class="content-fill"></div>
-                <div class="content-info"><span>Aqui hay info</span></div>
+                <div class="content-info"><span>{{ infoEntrega }}</span></div>
             </div>
         </div>    
     </section>
 </template>
 <script>
+import axios from 'axios';
+
+export default{
+    props:["pedido"],
+    data(){
+        return{
+            pedidoD : JSON.parse(this.pedido),
+            estado : 0,
+            infoSucursal : "",
+            infoSeguimiento : "",
+            infoEntrega : ""
+        }
+    },
+    methods:{
+        averiguarEstado(){
+            const diferencia = (new Date()-new Date(this.pedidoD["fecha-salida"]))/1000;
+            axios.get(`http://router.project-osrm.org/route/v1/driving/${this.pedidoD.origen.longitud},${this.pedidoD.origen.latitud};${this.pedidoD.destino.longitud},${this.pedidoD.destino.latitud}?overview=full&geometries=geojson&annotations=true&steps=true`)
+            .then(response => {
+                if(response.data.routes[0].duration <= diferencia){
+                    this.estado = 3;
+                }else if(diferencia >= 0){
+                    this.estado = 2;
+                }else{
+                    this.estado = 1
+                }
+                this.ajustarInfo(this.estado);
+            }).catch(error => console.error('Error fetching OSRM route: ', error));
+        },
+        ajustarInfo(estado){
+            if(estado == 1){
+                this.infoSucursal = "El pedido se encuentra en la sucursal: "+this.pedidoD["ultima-sucursal"] +", esperando a la hora de partida para empezar el viaje";
+            }else if(estado == 2){
+                this.infoSucursal = "El pedido partio desde la sucursal: "+this.pedidoD["ultima-sucursal"];
+                this.infoSeguimiento = "El pedido se encuentra en camino a la direccion de destino";
+            }else if(estado == 3){
+                this.infoSucursal = "El pedido partio desde la sucursal: "+this.pedidoD["ultima-sucursal"];
+                this.infoSeguimiento = "El pedido ya termino el viaje.";
+                this.infoEntrega = "El pedido ha sido entregado en la direccion de destino: "+this.pedidoD.destino.nombre;
+            }
+        }
+    },
+    watch: {
+        pedido: {
+            handler(pedidoN) {
+                this.pedidoD = JSON.parse(pedidoN);
+                this.averiguarEstado();
+            },
+            immediate: true
+        }
+    },
+    mounted(){
+        this.averiguarEstado();
+    }
+}
 </script>
 <style scoped>
 section{
@@ -117,5 +171,9 @@ section{
 }
 .info-center .content-fill{
     height: 13.62%;
+}
+
+.active{
+    background-color: rgb(255, 165, 120);
 }
 </style>
