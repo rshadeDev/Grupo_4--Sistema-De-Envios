@@ -4,21 +4,22 @@
       <RouterLink to="/">
         <img src="../assets/img/Logo.png" alt="logo">
       </RouterLink>
-    <h2>Ingresa tus datos</h2>
-    <form @submit.prevent="submitForm">
-      <label for="rut">Rut Usuario:</label>
-      <input type="text" id="rut" v-model="rut" required>
-  
-      <label for="contraseña">Contraseña:</label>
-      <input type="password" id="contraseña" v-model="contraseña" required>
+      <h2>Ingresa tus datos</h2>
+      <form @submit.prevent="submitForm">
+        <label for="rut">Rut Usuario:</label>
+        <input type="text" id="rut" v-model="rut" required>
 
-      <div class="button-ingresar">
-        <button type="submit">Ingresar</button>
-      </div>
-    </form>
-    <p>No estás registrado?
-    <router-link to="/registro">Crear Cuenta</router-link></p>
-  </div>
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" v-model="contraseña" required>
+
+        <div class="button-ingresar">
+          <button type="submit">Ingresar</button>
+        </div>
+      </form>
+      <p>No estás registrado?
+        <router-link to="/registro">Crear Cuenta</router-link>
+      </p>
+    </div>
   </section>
 </template>
 
@@ -52,7 +53,10 @@ export default {
   flex-direction: column;
   margin: 0 auto;
   width: 650px;
+  height: 100vh;
+  max-height: 100vh;
 }
+
 .login-container {
   background-color: #2E3452;
   border-radius: 15px;
@@ -116,10 +120,9 @@ button[type="submit"] {
 .register-link .link {
   color: #FF6D24;
   text-decoration: none;
-}  
+}
 
 p {
   color: white;
 }
-
 </style>
