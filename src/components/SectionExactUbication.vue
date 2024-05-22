@@ -33,15 +33,14 @@ export default {
     props:["pedido"],
     data() {
         return {
-            pedidoD: JSON.parse(this.pedido),
-            ultimasCoordenadas: []
+            pedidoD: JSON.parse(this.pedido)
         };
     },
     methods: {
         volverAInfo() {
             this.$router.push({name:"info-pedido", params:{pedidoRecibido: this.pedido}});
         },
-        setupLeafletMap() {
+        crearMapaLeaflet() {
             const mapDiv = L.map("verMapa").setView([this.pedidoD.origen.latitud, this.pedidoD.origen.longitud], 8);
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
@@ -60,10 +59,10 @@ export default {
                 const tiempoTotal = response.data.routes[0].duration;                    
                 const tiempoPartida = new Date(this.pedidoD["fecha-salida"]);
                 const tiempoActual = new Date();
-
+                
                 let tiempoPasado=(tiempoActual-tiempoPartida)/1000;
                 let tiempoAcumulado = 0;
-                let pasoActual = 0;
+                let indexPasoActual = 0;
                 let llegoAlDestino = false;
                 let contadorDeCoordenadas = 0;
                 if (tiempoPasado < 0){
@@ -72,53 +71,40 @@ export default {
 
                 const pasos = response.data.routes[0].legs[0].steps;
 
-
                 for (let i = 0; i < pasos.length; i++) {
                     tiempoAcumulado += pasos[i].duration;
                     contadorDeCoordenadas += pasos[i].geometry.coordinates.length;
                     if(tiempoAcumulado >= tiempoPasado){
                         contadorDeCoordenadas -= pasos[i].geometry.coordinates.length;
-                        pasoActual = i;
+                        indexPasoActual = i;
                         break;
                     }else if(i == pasos.length-1){
-                        pasoActual = i;
+                        indexPasoActual = i;
                         llegoAlDestino = true;
                     }
                 }
-                const posiciones = pasos.map(paso => paso.geometry.coordinates).flat();
 
                 if(!llegoAlDestino){
+                    const posiciones = pasos.map(paso => paso.geometry.coordinates).flat();
+
                     const tiempoRestante = tiempoTotal - tiempoPasado;
                     const tiempoRestantePasoActual = tiempoAcumulado - tiempoPasado;
-                    const tiempoTranscurridoEnElPaso = pasos[pasoActual].duration - tiempoRestantePasoActual;
+                    const tiempoTranscurridoEnElPaso = pasos[indexPasoActual].duration - tiempoRestantePasoActual;
 
-                    const progresoPasoActual = tiempoTranscurridoEnElPaso / pasos[pasoActual].duration;
+                    const progresoPasoActual = tiempoTranscurridoEnElPaso / pasos[indexPasoActual].duration;
                     
-                    //Este puntoInicial esta dando un error, pues no da la ubicacion que deberia
                     const puntoInicial = this.interpolate(posiciones[contadorDeCoordenadas], posiciones[contadorDeCoordenadas + 1], progresoPasoActual);
 
-                    const marker = L.marker([puntoInicial[1], puntoInicial[0]]).addTo(mapDiv);
-
-                    console.log(puntoInicial);
-                    console.log(pasos[pasoActual]);
-                    console.log(posiciones[contadorDeCoordenadas]);
-                    /*
-                    console.log("PASO ACTUAL:");
-                    console.log("TIEMPO TRANSCURRIDO = "+tiempoTranscurridoEnElPaso);
-                    console.log("TIEMPO RESTANTE = "+tiempoRestantePasoActual);
-                    console.log("TIEMPO TOTAL = "+pasos[pasoActual].duration +" O " + (tiempoTranscurridoEnElPaso+tiempoRestantePasoActual));
-
-                    console.log("PROGRESO = "+progresoPasoActual);
-                    */
-                    //for (let i = contadorDeCoordenadas; i < pasos[pasoActual].geometry.coordinates.length; i++) {}
-
-                    this.animateMarker(marker, posiciones.slice(contadorDeCoordenadas), tiempoRestante * 1000);             
+                    const marcadorMovil = L.marker([puntoInicial[1], puntoInicial[0]]).addTo(mapDiv);
+                 
+                    this.moverMarcador(marcadorMovil, posiciones.slice(contadorDeCoordenadas), tiempoRestante * 1000, progresoPasoActual);             
                 }
             })
             .catch(error => console.error('Error fetching OSRM route:', error));
         },
-        animateMarker(marker, route, duration) {
-            let startTime = null;
+        moverMarcador(marcador, ruta, duration, progresoPasoActual) {
+            let tiempoInicial = null;
+            const indexInicial = Math.floor(progresoPasoActual * (ruta.length - 1));
 
             const interpolate = (point1, point2, factor) => {
                 const lat = point1[1] + (point2[1] - point1[1]) * factor;
@@ -127,17 +113,17 @@ export default {
             };
 
             const step = (timestamp) => {
-                if (!startTime) startTime = timestamp;
-                const progress = timestamp - startTime;
+                if (!tiempoInicial) tiempoInicial = timestamp;
+                const progress = timestamp - tiempoInicial;
                 const factor = Math.min(progress / duration, 1);
 
-                const currentIndex = Math.floor(factor * (route.length - 1));
-                const nextIndex = Math.min(currentIndex + 1, route.length - 1);
-                const localFactor = (factor * (route.length - 1)) % 1;
-
-                const [lat, lng] = interpolate(route[currentIndex], route[nextIndex], localFactor);
-                marker.setLatLng([lat, lng]);
-
+                const overallFactor = (indexInicial / (ruta.length - 1)) + factor * ((ruta.length - 1 - indexInicial) / (ruta.length - 1));
+                const currentIndex = Math.floor(overallFactor * (ruta.length - 1));
+                const nextIndex = Math.min(currentIndex + 1, ruta.length - 1);
+                const localFactor = (overallFactor * (ruta.length - 1)) % 1;
+                const [lat, lng] = interpolate(ruta[currentIndex], ruta[nextIndex], localFactor);
+                marcador.setLatLng([lat, lng]);
+                
                 if (progress < duration) {
                     requestAnimationFrame(step);
                 }
@@ -151,7 +137,7 @@ export default {
         }
     },
     mounted() {
-        this.setupLeafletMap();
+        this.crearMapaLeaflet();
     },
 };
 </script>
