@@ -3,7 +3,7 @@
         <Header />
         <div class="content-container">
             <SectionBasicTrackInfo :pedido="pedidoRecibido"/>
-            <SectionMoreTrackInfo />
+            <SectionMoreTrackInfo :pedido="pedidoRecibido"/>
         </div> 
     </div>
 </template>

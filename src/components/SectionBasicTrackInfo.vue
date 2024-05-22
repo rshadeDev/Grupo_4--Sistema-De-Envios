@@ -20,13 +20,20 @@ export default {
             pedidoD: JSON.parse(this.pedido)
         };
     },
+    watch: {
+        pedido: {
+            handler(pedidoN) {
+                this.pedidoD = JSON.parse(pedidoN);
+            },
+            immediate: true
+        }
+    },
     methods: {
         verMapa() {
             this.$router.push({name:"mapa-pedido",params:{pedidoRecibido:this.pedido}});
         }
     }
 };
-
 </script>
 <style scoped>
 section{
