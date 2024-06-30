@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import jsonData from '../components/Json/lista-sucursales.json';
+import axios from 'axios';
 
 export default {
     data() {
@@ -48,9 +48,14 @@ export default {
     },
     methods: {
         loadCities() {
-            const uniqueCities = new Set();
-            jsonData.forEach(sucursal => uniqueCities.add(sucursal.ciudad.toLowerCase()));
-            this.cities = Array.from(uniqueCities);
+            axios.get('http://localhost:8080/sucursales')
+                .then(response => {
+                    const uniqueCities = new Set(response.data.map(sucursal => sucursal.ciudad.toLowerCase()));
+                    this.cities = Array.from(uniqueCities);
+                })
+                .catch(error => {
+                    console.error('Error loading cities:', error);
+                });
         },
         buscarSucursales() {
             this.$router.push({ path: '/lista-sucursal', query: { city: this.city } });

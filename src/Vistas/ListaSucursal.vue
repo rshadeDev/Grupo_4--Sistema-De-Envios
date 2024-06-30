@@ -28,8 +28,7 @@
 <script setup>
 import Header from '../components/Header.vue';
 import AsideIcon from '../components/AsideIconSucursal.vue';
-
-import sucursalesJSON from '../components/Json/lista-sucursales.json';
+import axios from 'axios';
 
 import { ref, onMounted, watch } from 'vue';
 import { useRouter } from 'vue-router';
@@ -42,16 +41,29 @@ const router = useRouter();
 const buscarSucursales = () => {
     const searchTerm = searchInput.value.toLowerCase();
     if (searchTerm) {
-        filteredSucursales.value = sucursalesJSON.filter(sucursal =>
-            sucursal.ciudad.toLowerCase().includes(searchTerm) ||
-            sucursal.nombre.toLowerCase().includes(searchTerm)
-        );
+        axios.get(`http://localhost:8080/sucursales/search?ciudad=${searchTerm}`)
+            .then(response => {
+                filteredSucursales.value = response.data;
+            })
+            .catch(error => {
+                console.error('Error searching sucursales:', error);
+            });
     } else if (router.currentRoute.value.query.city) {
-        filteredSucursales.value = sucursalesJSON.filter(sucursal =>
-            sucursal.ciudad.toLowerCase().includes(router.currentRoute.value.query.city.toLowerCase())
-        );
+        axios.get(`http://localhost:8080/sucursales/search?ciudad=${router.currentRoute.value.query.city}`)
+            .then(response => {
+                filteredSucursales.value = response.data;
+            })
+            .catch(error => {
+                console.error('Error searching sucursales:', error);
+            });
     } else {
-        filteredSucursales.value = sucursalesJSON;
+        axios.get('http://localhost:8080/sucursales')
+            .then(response => {
+                filteredSucursales.value = response.data;
+            })
+            .catch(error => {
+                console.error('Error fetching sucursales:', error);
+            });
     }
 };
 
