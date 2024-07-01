@@ -23,21 +23,30 @@
 </template>
 
 <script>
-import jsonData from '../components/Json/PedidosJson.json';
+import axios from 'axios';
 
 export default {
     data() {
         return {
             id: null,
-            pedidoBuscado: {},
+            pedidoBuscado: null,
         };
     },
     methods: {
         buscarPedido() {
-            this.pedidoBuscado = JSON.stringify(jsonData.find(pedidos => pedidos.id == this.id));
-            if (this.pedidoBuscado != null) {
-                this.$router.push({ name: "info-pedido", params: { pedidoRecibido: this.pedidoBuscado } });
+            const regex = /^[1-9]\d*$/;
+            if (!regex.test(this.id)) {
+                alert('El código debe ser un número entero positivo.');
+                return;
             }
+            axios.get(`http://localhost:8080/pedidos/${this.id}`)
+                .then(response => {
+                    this.pedidoBuscado = response.data;
+                    this.$router.push({name: "info-pedido", params: { pedidoRecibido: this.pedidoBuscado }});
+                })
+                .catch(error => {
+                    console.error('Error searching pedidos:', error);
+                });
         }
     }
 };
