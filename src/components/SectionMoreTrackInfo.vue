@@ -46,7 +46,7 @@ export default{
     },
     methods:{
         averiguarEstado(){
-            const diferencia = (new Date()-new Date(this.pedidoD["fecha-salida"]))/1000;
+            const diferencia = (new Date()-new Date(this.pedidoD.fechaSalida))/1000;
             axios.get(`http://router.project-osrm.org/route/v1/driving/${this.pedidoD.origen.longitud},${this.pedidoD.origen.latitud};${this.pedidoD.destino.longitud},${this.pedidoD.destino.latitud}?overview=full&geometries=geojson&annotations=true&steps=true`)
             .then(response => {
                 if(response.data.routes[0].duration <= diferencia){
@@ -61,12 +61,12 @@ export default{
         },
         ajustarInfo(estado){
             if(estado == 1){
-                this.infoSucursal = "El pedido se encuentra en la sucursal: "+this.pedidoD["ultima-sucursal"] +", esperando a la hora de partida para empezar el viaje";
+                this.infoSucursal = "El pedido se encuentra en la sucursal: "+this.pedidoD.ultimaSucursal.nombre +", esperando a la hora de partida para empezar el viaje";
             }else if(estado == 2){
-                this.infoSucursal = "El pedido partio desde la sucursal: "+this.pedidoD["ultima-sucursal"];
+                this.infoSucursal = "El pedido partio desde la sucursal: "+this.pedidoD.ultimaSucursal.nombre;
                 this.infoSeguimiento = "El pedido se encuentra en camino a la direccion de destino";
             }else if(estado == 3){
-                this.infoSucursal = "El pedido partio desde la sucursal: "+this.pedidoD["ultima-sucursal"];
+                this.infoSucursal = "El pedido partio desde la sucursal: "+this.pedidoD.ultimaSucursal.nombre;
                 this.infoSeguimiento = "El pedido ya termino el viaje.";
                 this.infoEntrega = "El pedido ha sido entregado en la direccion de destino: "+this.pedidoD.destino.nombre;
             }

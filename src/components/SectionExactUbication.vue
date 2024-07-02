@@ -57,7 +57,7 @@ export default {
                 mapDiv.fitBounds(geojsonLayer.getBounds());
 
                 const tiempoTotal = response.data.routes[0].duration;                    
-                const tiempoPartida = new Date(this.pedidoD["fecha-salida"]);
+                const tiempoPartida = new Date(this.pedidoD.fechaSalida);
                 const tiempoActual = new Date();
                 
                 let tiempoPasado=(tiempoActual-tiempoPartida)/1000;

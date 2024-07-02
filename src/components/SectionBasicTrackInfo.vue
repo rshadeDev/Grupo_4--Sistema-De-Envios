@@ -4,7 +4,7 @@
             <h4>Nro. pedido: {{ pedidoD.id}}</h4>
         </div>
         <div class="content">
-            <div class="info"><p>Entrega en: {{ pedidoD["ultima-sucursal"] }}</p></div>
+            <div class="info"><p>Entrega en: {{ pedidoD.ultimaSucursal.nombre }}</p></div>
             <div class="info"><p>Destinatario: {{ pedidoD.destinatario }}</p></div>
             <div class="info"><p>Origen: {{ pedidoD.origen.nombre }}</p></div>
             <div class="info"><p>Destino: {{ pedidoD.destino.nombre }}</p></div>
