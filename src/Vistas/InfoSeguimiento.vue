@@ -2,24 +2,25 @@
     <div class="container">
         <Header />
         <div class="content-container">
-            <SectionBasicTrackInfo :pedido="pedidoRecibido"/>
-            <SectionMoreTrackInfo :pedido="pedidoRecibido"/>
+            <SectionBasicTrackInfo :pedido="this.pedidoRecibido"/>
+            <SectionMoreTrackInfo :pedido="this.pedidoRecibido"/>
         </div> 
     </div>
 </template>
 
-<script setup>
+<script>
 import Header from '../components/Header.vue';
 import SectionBasicTrackInfo from '../components/SectionBasicTrackInfo.vue';
 import SectionMoreTrackInfo from '../components/SectionMoreTrackInfo.vue';
 
-const props = defineProps({
-  pedidoRecibido: {
-    type: String,
-    required: true
+export default {
+  props: ['pedidoRecibido'],
+  components: {
+    Header,
+    SectionBasicTrackInfo,
+    SectionMoreTrackInfo
   }
-})
-
+}
 </script>
 <style scoped>
 .content-container{
@@ -30,4 +31,4 @@ const props = defineProps({
 .container{
     height: 100%;
 }
-</style>,
+</style>

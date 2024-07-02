@@ -14,7 +14,12 @@
 </template>
 <script>
 export default {
-    props:["pedido"],
+    props: {
+        pedido: {
+            type: String,
+            required: true
+        }
+    },
     data() {
         return {
             pedidoD: JSON.parse(this.pedido)
@@ -30,7 +35,7 @@ export default {
     },
     methods: {
         verMapa() {
-            this.$router.push({name:"mapa-pedido",params:{pedidoRecibido:this.pedido}});
+            this.$router.push({name:"mapa-pedido",params:{pedidoRecibido:JSON.stringify(this.pedidoD)}});
         }
     }
 };

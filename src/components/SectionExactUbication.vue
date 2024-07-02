@@ -30,15 +30,20 @@ import L from "leaflet";
 import axios from 'axios';
 
 export default {
-    props:["pedido"],
+    props: {
+        pedido: {
+            type: String,
+            required: true
+        }
+    },
     data() {
         return {
-            pedidoD: JSON.parse(this.pedido)
+            pedidoD: this.pedido
         };
     },
     methods: {
         volverAInfo() {
-            this.$router.push({name:"info-pedido", params:{pedidoRecibido: this.pedido}});
+            this.$router.push({name:"info-pedido", params:{pedidoRecibido: JSON.stringify(this.pedidoD)}});
         },
         crearMapaLeaflet() {
             const mapDiv = L.map("verMapa").setView([this.pedidoD.origen.latitud, this.pedidoD.origen.longitud], 8);
@@ -139,6 +144,14 @@ export default {
     mounted() {
         this.crearMapaLeaflet();
     },
+    watch: {
+        pedido: {
+            handler(pedidoN) {
+                this.pedidoD = JSON.parse(pedidoN);
+            },
+            immediate: true
+        }
+    }
 };
 </script>
 <style scoped>
