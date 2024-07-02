@@ -42,6 +42,7 @@ export default {
             axios.get(`http://localhost:8080/pedidos/${this.id}`)
                 .then(response => {
                     this.pedidoBuscado = response.data;
+                    this.pedidoBuscado.fechaSalida = new Date(this.pedido.fechaSalida).toISOString();
                     this.$router.push({name: "info-pedido", params: { pedidoRecibido: this.pedidoBuscado }});
                 })
                 .catch(error => {
