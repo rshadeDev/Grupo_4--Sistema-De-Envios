@@ -7,28 +7,28 @@
 
       <form @submit.prevent="submitForm">
         <label for="rut">Ingrese su RUT:</label>
-        <input type="text" id="rut" name="rut" required>
+        <input type="text" id="rut" v-model="rut" required>
 
         <label for="nombre">Ingrese su nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+        <input type="text" id="nombre" v-model="nombre" required>
 
         <label for="apellido">Ingrese su apellido:</label>
-        <input type="text" id="apellido" name="apellido" required>
+        <input type="text" id="apellido" v-model="apellido" required>
 
         <label for="e-mail">Ingrese su e-mail:</label>
-        <input type="text" id="e-mail" name="e-mail" required>
+        <input type="text" id="e-mail" v-model="email" required>
 
         <label for="direccion">Ingrese su dirección:</label>
-        <input type="text" id="direccion" name="direccion" required>
+        <input type="text" id="direccion" v-model="direccion" required>
 
         <label for="comuna">Ingrese su comuna:</label>
-        <input type="text" id="comuna" name="comuna" required>
+        <input type="text" id="comuna" v-model="comuna" required>
 
         <label for="telefono-movil">Ingrese su número móvil:</label>
-        <input type="text" id="telefono-movil" name="telefono-movil" required>
+        <input type="text" id="telefono-movil" v-model="telefonoMovil" required>
 
         <label for="contraseña">Ingrese su contraseña:</label>
-        <input type="password" id="contraseña" name="contraseña" required>
+        <input type="password" id="contraseña" v-model="contraseña" required>
 
         <div class="button-Registrarse">
           <button type="submit">Registrarse</button>
