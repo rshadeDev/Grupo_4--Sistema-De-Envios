@@ -31,9 +31,7 @@
         <input type="password" id="contraseña" name="contraseña" required>
 
         <div class="button-Registrarse">
-          <RouterLink to="/inicio-sesion">
-            <button type="submit">Registrarse</button>
-          </RouterLink>
+          <button type="submit">Registrarse</button>
         </div>
         <p class="login-link">Ya tienes una cuenta?
           <router-link to="/inicio-sesion" class="link">Iniciar sesion</router-link>
@@ -45,6 +43,7 @@
   
 <script>
 import { RouterLink } from 'vue-router';
+import axios from 'axios';
 
 export default {
     data() {
@@ -71,8 +70,13 @@ export default {
                 telefonoMovil: this.telefonoMovil,
                 contraseña: this.contraseña
             };
-            localStorage.setItem('userData', JSON.stringify(userData));
-            this.$router.push('/InicioSesion');
+            axios.post('http://localhost:8080/usuarios/registro', userData).then(response => {
+              console.log('Usuario registrado correctamente: ', response.data);
+              this.$router.push('/inicio-sesion');
+            })
+            .catch(error => {
+              console.error('Error al registrar usuario: ', error);
+            });
         },
     },
     components: { RouterLink }
