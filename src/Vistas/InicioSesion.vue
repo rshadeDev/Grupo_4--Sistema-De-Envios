@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
@@ -33,15 +35,18 @@ export default {
   },
   methods: {
     submitForm() {
-      this.login();
+      const userData = {
+        rut: this.rut,
+        contraseña: this.contraseña
+      };
+      axios.post('http://localhost:8080/usuarios/inicio-sesion', userData).then(response => {
+        console.log('Inicio de sesion exitoso: ', response.data);
+        this.$router.push('/');
+      })
+      .catch(error => {
+        console.error('Error al iniciar sesion: ', error);
+      });
     },
-    login() {
-      this.$root.isAuthenticated = true;
-
-      localStorage.setItem('isLoggedIn', 'true');
-
-      this.$router.push('/');
-    }
   }
 };
 </script>
