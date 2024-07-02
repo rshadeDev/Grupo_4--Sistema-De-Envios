@@ -53,7 +53,14 @@ export default {
             axios.get(`http://localhost:8080/pedidos/${this.id}`)
                 .then(response => {
                     this.pedidoBuscado = response.data;
-                    this.$router.push({name: "info-pedido", params: { pedidoRecibido: this.pedidoBuscado }});
+                    this.pedidoBuscado.fechaSalida = new Date(this.pedidoBuscado.fechaSalida).toISOString();
+                
+                    const nuevoP = Object.assign({}, this.pedidoBuscado);
+                    nuevoP.destino = Object.assign({}, nuevoP.destino);
+                    nuevoP.origen = Object.assign({}, nuevoP.origen);
+                    nuevoP.ultimaSucursal = Object.assign({}, nuevoP.ultimaSucursal);
+
+                    this.$router.push({name: "info-pedido", params: { pedidoRecibido: JSON.stringify(nuevoP) }});
                 })
                 .catch(error => {
                     console.error('Error searching pedidos:', error);
